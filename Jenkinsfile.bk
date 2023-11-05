@@ -1,0 +1,40 @@
+pipeline {
+        agent { label 'docker-slave' } 
+	
+	parameters {
+        booleanParam(defaultValue:false, description:'apply automation testing on API', name:'APIAutomation')
+        booleanParam(defaultValue:false, description:'apply automation testing on FE', name:'UIAutomation')
+    }
+	
+	
+  stages {
+
+		stage ('automation testing') {
+       steps {
+       script {
+        sh 'pwd'
+	if (params.APIAutomation) {
+	    
+	   
+	//sh 'mvn clean package -B -X -Dmaven.test.skip=true'
+	      //sh 'mvn test -Dcucumber.options="--tags @APIAutomation"'
+	      sh "echo 'running API automation'"
+	      sh 'mvn test -Dcucumber.options="--tags @APIAutomation"'
+              //sh 'mvn test -Dcucumber.options="--tags @UIAutomation"'
+	//sh'mvn test -Dcucumber.options="--tags @submit_feedback"'
+	}
+	  if (params.UIAutomation) {
+	     
+	      sh "echo 'running UI automation'"
+	      sh 'mvn -version'
+	      sh 'mvn test -Dcucumber.options="--tags @UIAutomation"'      
+	      }
+	      }
+        
+        
+        
+        
+      }
+    }
+  }
+}

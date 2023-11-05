@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Testng Cucumber Suite">
+    <test name="API Test">
+        <parameter name="environment" value="SIT" /> <!-- ST or SIT -->
+        <classes>
+            <class name="testRunner.APITestRunner"></class>
+        </classes>
+    </test>
+</suite>

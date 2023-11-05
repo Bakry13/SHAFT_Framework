@@ -1,0 +1,8 @@
+<suite name="Testng Cucumber Suite">
+    <test name="Run All Tests">
+        <parameter name="Environment" value="SIT" /> <!--ST or SIT-->
+        <classes>
+            <class name="testRunner.TestRunner"></class>
+        </classes>
+    </test>
+</suite>

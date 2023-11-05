@@ -1,0 +1,15 @@
+.idea
+target
+test-screenshots
+test-output
+allure-results
+extent-reports
+RetailFramework.iml
+*.iml
+WebFramework.iml
+debug.log
+cucumber-reports/cucumberReport.html
+debug.log
+cucumber-reports/cucumberReport.html
+cucumber-reports/cucumberReport.html
+/src/test/resources/JSONTestData/
